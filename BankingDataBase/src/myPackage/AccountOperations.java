@@ -42,7 +42,7 @@ public class AccountOperations{
 		stmt.setString(2, customerid);
 		int rows = stmt.executeUpdate();
 		if(rows > 0) {
-			System.out.println("Money added successfully.....");
+			System.out.println("Money added successfully....The total balance is"+(amt+rs.getInt(1)));
 		}
 		}
 		catch(SQLException e) {
@@ -63,7 +63,7 @@ public class AccountOperations{
 		stmt.setString(2, customerid);
 		int rows = stmt.executeUpdate();
 		if(rows > 0 && amt < rs.getInt(1)) {
-			System.out.println("Money withdraw successfully.....");
+			System.out.println("Money withdraw successfully....."+(rs.getInt(1)-amt)));
 		}
 		else {
 			System.out.println("balance is more than the current balance");
